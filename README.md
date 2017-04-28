@@ -1,4 +1,4 @@
-# *pos-atv-microservices*
+# *pos-atv-soap*
 Atividade de POS, onde uma agência vende pacotes de viagem que incluem uma reserva em hotel e de passagem. Aplicação desenvolvida com a tecnologia *SOAP*
 
 ## *DOCKER*

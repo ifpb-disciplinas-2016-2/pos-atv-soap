@@ -16,12 +16,6 @@ import javax.persistence.PersistenceContext;
  *
  * @author Victor Hugo <victor.hugo.origins@gmail.com>
  */
-@DataSourceDefinition(
-        name = "java:app/jdbc/hotel",
-        className = "org.postgresql.Driver",
-        url = "jdbc:postgresql://postgres-hotel:5432/hotel",
-        user = "postgres",
-        password = "123456")
 @Stateless
 public class HotelBookingManager {
 

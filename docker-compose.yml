@@ -1,18 +1,20 @@
 version: '2'
 
 services:
-  db-agency-soap_postgres:
-    container_name: db-victor_agency-soap
+  postgres-agency-soap:
+    container_name: victor-agency-soap-container
+    image: victor/postgres-agency-soap
     build: ./agency-soap/postgres
     volumes:
       - ./agency-volume:/var/lib/postgresql
     ports:
       - 5433:5432
 
-  service-agency-soap:
-    container_name: service-victor_agency-soap
+  agency-service-soap:
+    container_name: victor-agency-soap-service-container
+    image: victor/service-agency-soap
     build: ./agency-soap/
     ports:
       - 8081:8080
     depends_on:
-      - db-agency-soap_postgres
+      - postgres-agency-soap

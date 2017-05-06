@@ -19,7 +19,7 @@ import javax.persistence.PersistenceContext;
 @DataSourceDefinition(
         name = "java:app/jdbc/agency",
         className = "org.postgresql.Driver",
-        url = "jdbc:postgresql://postgres-agency:5432/agency",
+        url = "jdbc:postgresql://localhost:5432/agency",
         user = "postgres",
         password = "123456")
 @Stateless

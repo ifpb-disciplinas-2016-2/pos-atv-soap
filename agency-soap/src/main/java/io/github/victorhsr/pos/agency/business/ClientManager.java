@@ -16,12 +16,6 @@ import javax.persistence.PersistenceContext;
  *
  * @author Victor Hugo <victor.hugo.origins@gmail.com>
  */
-@DataSourceDefinition(
-        name = "java:app/jdbc/agency",
-        className = "org.postgresql.Driver",
-        url = "jdbc:postgresql://localhost:5433/agency",
-        user = "postgres",
-        password = "123456")
 @Stateless
 public class ClientManager {
 

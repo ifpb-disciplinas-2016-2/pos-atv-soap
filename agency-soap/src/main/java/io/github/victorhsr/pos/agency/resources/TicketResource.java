@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.Oneway;
+import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -27,26 +28,31 @@ public class TicketResource {
     private TicketManager ticketManager;
 
     @WebResult(name = "tickets")
+    @WebMethod
     public List<Ticket> getTickets() {
         return ticketManager.getAll();
     }
 
     @Oneway
+    @WebMethod
     public void createTicket(@WebParam(name = "ticket") Ticket ticket) {
         ticketManager.persistTicket(ticket);
     }
 
     @WebResult(name = "ticket")
+    @WebMethod
     public Ticket getTicket(@WebParam(name = "ticketId") int id) {
         return ticketManager.getTicket(id);
     }
 
     @Oneway
+    @WebMethod
     public void updateTicket(@WebParam(name = "ticket") Ticket ticket) {
         ticketManager.updateTicket(ticket);
     }
 
     @Oneway
+    @WebMethod
     public void excludeTicket(@WebParam(name = "ticket") Ticket ticket) {
         ticketManager.excludeTicket(ticket);
     }

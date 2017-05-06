@@ -1,4 +1,4 @@
-FROM payara/server-web
+FROM payara/server-full
 MAINTAINER Victor Hugo <victor.hugo.origins@gmail.com>
 ENV DOMAIN domain1
 ENV LIB /opt/payara41/glassfish/domains/${DOMAIN}/lib/

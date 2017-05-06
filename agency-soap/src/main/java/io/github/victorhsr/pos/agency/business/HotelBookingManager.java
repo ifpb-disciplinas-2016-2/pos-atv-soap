@@ -7,7 +7,6 @@ package io.github.victorhsr.pos.agency.business;
 
 import io.github.victorhsr.pos.agency.entities.HotelBooking;
 import java.util.List;
-import javax.annotation.sql.DataSourceDefinition;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

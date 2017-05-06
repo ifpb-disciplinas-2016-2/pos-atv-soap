@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.Oneway;
+import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -27,27 +28,32 @@ public class PackageResources {
     private PackageManager packageManager;
 
     @WebResult(name = "packages")
+    @WebMethod
     public List<Package> getPackages() {
         return packageManager.getAll();
     }
 
     @Oneway
+    @WebMethod
     public void createPackage(@WebParam(name = "package") Package myPackage) {
         System.out.println("criando"+myPackage);
         packageManager.persistPackage(myPackage);
     }
 
     @WebResult(name = "package")
+    @WebMethod
     public Package getPackage(@WebParam(name = "packageId") int id) {
         return packageManager.getPackage(id);
     }
 
     @Oneway
+    @WebMethod
     public void updatePackage(@WebParam(name = "package") Package myPackage) {
         packageManager.atualizarPacote(myPackage);
     }
 
     @Oneway
+    @WebMethod
     public void excludePackage(@WebParam(name = "package") Package myPackage) {
         packageManager.excludePackage(myPackage);
     }

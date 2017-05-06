@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.Oneway;
+import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -27,26 +28,31 @@ public class HotelBookingResource {
     private HotelBookingManager hotelBookingManager;
 
     @WebResult(name = "hotelBookings")
+    @WebMethod
     public List<HotelBooking> getHotelBookings() {
         return hotelBookingManager.getAll();
     }
 
     @Oneway
+    @WebMethod
     public void createHotelBooking(@WebParam(name = "hotelBooking") HotelBooking hotelBooking) {
         hotelBookingManager.persistHotelBooking(hotelBooking);
     }
 
     @WebResult(name = "hotelBooking")
+    @WebMethod
     public HotelBooking getHotelBooking(@WebParam(name = "hotelBookingId") int id) {
         return hotelBookingManager.getHotelBooking(id);
     }
 
     @Oneway
+    @WebMethod
     public void updateHotelBooking(@WebParam(name = "hotelBooking") HotelBooking hotelBooking) {
         hotelBookingManager.updateHotelBooking(hotelBooking);
     }
 
     @Oneway
+    @WebMethod
     public void excludeHotelBooking(@WebParam(name = "hotelBooking") HotelBooking hotelBooking) {
         hotelBookingManager.excluirReservaHotel(hotelBooking);
     }

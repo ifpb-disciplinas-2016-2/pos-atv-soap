@@ -11,6 +11,7 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.jws.Oneway;
+import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
@@ -27,26 +28,31 @@ public class ClientResources {
     private ClientManager clientManager;
 
     @WebResult(name = "clients")
+    @WebMethod
     public List<Client> getClients() {
         return clientManager.getAll();
     }
 
     @Oneway
+    @WebMethod
     public void createClient(@WebParam(name = "client") Client client) {
         clientManager.persistClient(client);
     }
 
     @WebResult(name = "client")
+    @WebMethod
     public Client getClient(@WebParam(name = "clientId") int id) {
         return clientManager.getClient(id);
     }
 
     @Oneway
+    @WebMethod
     public void updateClient(@WebParam(name = "client") Client client) {
         clientManager.updateClient(client);
     }
 
     @Oneway
+    @WebMethod
     public void excludeClient(@WebParam(name = "client") Client client) {
         clientManager.excludeClient(client);
     }

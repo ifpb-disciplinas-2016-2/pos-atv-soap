@@ -12,10 +12,10 @@ Para encerrar os serviços, execute o arquivo *shutdown.sh*
 
 ## *Endpoints* da aplicação
 Os arquivos *WSDL* podem ser encontrados nas seguintes *URLs*
-  * Pacote - *URL*: *http://localhost:8080/pacote/PackageResources?WSDL*
-  * Hotel - *URL*: *http://localhost:8080/reserva_hotel/HotelBookingResource?WSDL*
-  * Passagem - *URL*: *http://localhost:8080/passagem/TicketResource?WSDL*
-  * Cliente - *URL*: *http://localhost:8080/cliente/ClientResources?WSDL*
+  * Pacote - *URL*: *http://localhost:8081/pacote/PackageResources?WSDL*
+  * Hotel - *URL*: *http://localhost:8081/reserva_hotel/HotelBookingResource?WSDL*
+  * Passagem - *URL*: *http://localhost:8081/passagem/TicketResource?WSDL*
+  * Cliente - *URL*: *http://localhost:8081/cliente/ClientResources?WSDL*
 
 ## soap-consumer
 

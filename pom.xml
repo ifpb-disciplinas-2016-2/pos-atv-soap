@@ -7,6 +7,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>agency-soap</module>
-        <!-- <module>soap-consumer</module> -->
+        <module>soap-consumer</module> 
     </modules>
 </project>
